@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+
+Este es el cuerpo principal de la aplicación (centro de juegos) o index.
+
+<br>
+
+        <h1>Hola {{ user.username }}</h1>
+
+<br>
+<a href="juego/">Ir a Juego</a>
+<br>
+<a href="{% url 'sign_out' %}">Cerrar sesión</a>
+
+{% endblock content %}

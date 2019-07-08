@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Tienda {% endblock %}
+
+{% block content %}
+    
+    Estas en la ventana de tienda
+
+
+    <br>
+    <a href="/gaming/contacto/">Ir a contacto</a>
+    <br>
+    <a href="/gaming/">Ir a index</a>
+    <br>
+    <a href="{% url 'sign_out' %}">Cerrar sesión</a>
+    
+{% endblock content %}
