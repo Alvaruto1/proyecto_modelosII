@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} Quienes somos {% endblock %}
+
+{% block content %}
+    
+    Estas en la ventana de quienes somos
+
+    <br>
+    <a href="/gaming/">Ir a index</a>
+    <br>
+    <a href="{% url 'sign_out' %}">Cerrar sesión</a>
+    
+{% endblock content %}
