@@ -54,7 +54,22 @@ def user(request):
 def listarTienda(request):
     if request.is_ajax():
         tienda = list(Juego.objects.all().values())
-        return JsonResponse({'tienda':tienda},content_type='application/json',safe=False)
+        tienda1 = Juego.objects.all()
+        score = []
+        if request.user.is_authenticated:
+            jugador = Jugador.objects.get(usuario_id=request.user.pk)
+            puntajes = Puntaje.objects.filter(jugador_id=jugador.pk)
+
+            for x in tienda1:
+                estado = False
+                for y in puntajes:
+                    if x.pk == y.juego.pk:
+                        score.append(y.valor)
+                        estado = True
+                        break
+                if not estado:
+                    score.append(0)
+        return JsonResponse({'tienda':tienda,'puntaje':score},content_type='application/json',safe=False)
 
 
 @csrf_exempt

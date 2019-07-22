@@ -1,3 +1,5 @@
+
+
 let penguin;
 let obstacles;
 let board;

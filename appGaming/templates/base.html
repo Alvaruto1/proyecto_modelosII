@@ -98,7 +98,7 @@
                     <span v-if="p === 0">
                       <div v-for="x of juegosTienda">
                           {% if user.is_authenticated %}
-                            <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion" :url="x.url"></juego>
+                            <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
                           {% else %}
                               <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
                           {% endif %}

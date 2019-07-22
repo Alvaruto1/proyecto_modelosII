@@ -14,31 +14,36 @@ app=new Vue({
                 nombre: 'Juego1',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 5
             },
             {
                 nombre: 'Juego2',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 10
             },
             {
                 nombre: 'Juego3',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 0
             },
             {
                 nombre: 'Juego4',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 0
             },
             {
                 nombre: 'Juego5',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 0
             }
         ],
         libreria: [
@@ -87,21 +92,7 @@ app=new Vue({
 
     mounted: function(){
 
-        $.ajax({
-            type: 'POST',
-            url: '../listar_tienda',
-            headers: { "X-CSRFToken": getCookie("csrftoken")},
-            success: function (s) {
-                app.juegosTienda = [];
-                for(var i=0;i<s.tienda.length;i++){
-                    var elem = {nombre: s.tienda[i].nombre,imagen:s.tienda[i].nombre,descripcion:s.tienda[i].creador,url:globals.juegos+s.tienda[i].nombre}
-
-                    app.juegosTienda.push(elem);
-                }
-            },
-            processData: false,
-            contentType: false,
-        });
+        this.puntajes();
 
 
     },
@@ -148,6 +139,7 @@ app=new Vue({
                     break;
                 case 3:
                     this.panel = 3;
+                    this.puntajes();
                     break;
             }
         },
@@ -189,6 +181,23 @@ app=new Vue({
                 processData: false,
                 contentType: false,
             });
+        },
+        puntajes(){
+            $.ajax({
+            type: 'POST',
+            url: '../listar_tienda',
+            headers: { "X-CSRFToken": getCookie("csrftoken")},
+            success: function (s) {
+                app.juegosTienda = [];
+                for(var i=0;i<s.tienda.length;i++){
+                    var elem = {nombre: s.tienda[i].nombre,imagen:s.tienda[i].nombre,descripcion:s.tienda[i].creador,url:globals.juegos+s.tienda[i].nombre, puntaje: s.puntaje[i]}
+                    app.juegosTienda.push(elem);
+                }
+            },
+            processData: false,
+            contentType: false,
+        });
+
         },
 
     }
