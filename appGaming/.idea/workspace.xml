@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b2ec65a-a165-431b-9350-159d728c0019" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/estilos/default.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/gallina.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/imagenes/carreteras.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/imagenes/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/imagenes/imagen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/imagenes/teclado.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/imagenes/trasparente.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/imagenes/vehiculo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/imagenes/vehiculo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/calaca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/jquery-1.11.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/jquery-1.11.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/quica.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/sonidos/pierde_vida.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/juegos/gallina.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/appGaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appGaming.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appGaming/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/appGaming/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/juegos/penguin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/juegos/penguin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/gallina.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,27 +19,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/juegos/penguin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/penguin/scripts/obstacle.js">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -69,20 +30,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/juegos/gallina.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/juegos/llorona.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/juegos/gallina.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="76" column="65" lean-forward="true" selection-start-line="76" selection-start-column="65" selection-end-line="76" selection-end-column="65" />
+            <state relative-caret-position="63">
+              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/llorona/js/quica.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/llorona/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="676">
+              <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -91,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/quica.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="672">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
             </state>
           </provider>
         </entry>
@@ -99,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/head_game/headGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="210" column="90" lean-forward="true" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="90" />
+            <state relative-caret-position="697">
+              <caret line="210" column="90" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -109,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/templates/juegos/head_game.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="46" />
+              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -164,6 +148,8 @@
         <option value="$PROJECT_DIR$/gaming/forms.py" />
         <option value="$PROJECT_DIR$/templates/juegos/gallina.html" />
         <option value="$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/script.js" />
+        <option value="$PROJECT_DIR$/gaming/static/js/Juegos/llorona/js/script.js" />
+        <option value="$PROJECT_DIR$/templates/juegos/llorona.html" />
       </list>
     </option>
   </component>
@@ -228,7 +214,7 @@
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="Juegos" type="462c0819:PsiDirectoryNode" />
-              <item name="head_game" type="462c0819:PsiDirectoryNode" />
+              <item name="llorona" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
@@ -251,7 +237,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gaming/static/js/Juegos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/juegos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -265,8 +251,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gaming/static/js/Juegos" />
       <recent name="$PROJECT_DIR$/templates/juegos" />
+      <recent name="$PROJECT_DIR$/gaming/static/js/Juegos" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/templates/Principal" />
       <recent name="$PROJECT_DIR$/templates" />
@@ -358,12 +344,12 @@
       <workItem from="1563770765264" duration="341000" />
       <workItem from="1563799722832" duration="4591000" />
       <workItem from="1563804632073" duration="5872000" />
-      <workItem from="1563811007061" duration="3326000" />
+      <workItem from="1563811007061" duration="5056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85349000" />
+    <option name="totallyTimeSpent" value="87079000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -378,12 +364,12 @@
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2230523" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2230523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3256579" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3256579" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -641,38 +627,55 @@
     <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/penguin/scripts/obstacle.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/juegos/head_game.html">
+    <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/penguin/scripts/sketch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/juegos/gallina.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="693">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/head_game/headGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="210" column="90" lean-forward="true" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="90" />
+        <state relative-caret-position="697">
+          <caret line="210" column="90" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/juegos/head_game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/quica.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/penguin/scripts/sketch.js">
+    <entry file="file://$PROJECT_DIR$/templates/juegos/gallina.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+        <state relative-caret-position="315">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/llorona/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/llorona/js/quica.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -681,10 +684,10 @@
         <state relative-caret-position="-815" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaming/static/js/Juegos/gallina/js/script.js">
+    <entry file="file://$PROJECT_DIR$/templates/juegos/llorona.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="76" column="65" lean-forward="true" selection-start-line="76" selection-start-column="65" selection-end-line="76" selection-end-column="65" />
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>

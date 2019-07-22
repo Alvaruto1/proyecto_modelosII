@@ -59,15 +59,14 @@ function run(){
 			calacas[i].dibujar(contextoBuffer);
 			calacas[i].actualizar();
 			if(quica.colision(calacas[i].x,calacas[i].y)){
-				quica.sprite = 4;
-				quica.vida=0;
+				quica.sprite = 2;
+				quica.vida--;
 				$('#pierde')[0].play();
 			}
 		}
 		
 		if(quica.vida <= 0)
 			jugando = false;
-
 		
 		contexto.clearRect(0,0,miCanvas.width,miCanvas.height);
 		contexto.drawImage(buffer, 0, 0);
@@ -86,11 +85,11 @@ function run(){
 		contextoBuffer.fillText("try again", 550, 460);
 		contexto.clearRect(0,0,miCanvas.width,miCanvas.height);
 		contexto.drawImage(buffer, 0, 0);
-		enviarScore(quica.puntos,'../juego/registra_score','gallina');
-
+		enviarScore(quica.puntos,'../juego/registra_score','llorona');
 	}
 	
 }
+
 // envio score, para guardar a usuario
 function enviarScore(score1, url, name1){
     console.log(name)
@@ -121,4 +120,3 @@ function getCookie(c_name)
     }
     return "";
  }
-
