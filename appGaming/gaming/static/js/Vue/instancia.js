@@ -94,7 +94,8 @@ app=new Vue({
             success: function (s) {
                 app.juegosTienda = [];
                 for(var i=0;i<s.tienda.length;i++){
-                    var elem = {nombre: s.tienda[i].nombre,imagen:s.tienda[i].nombre,descripcion:s.tienda[i].creador,url:'./juegos/'+s.tienda[i].nombre}
+                    var elem = {nombre: s.tienda[i].nombre,imagen:s.tienda[i].nombre,descripcion:s.tienda[i].creador,url:globals.juegos+s.tienda[i].nombre}
+
                     app.juegosTienda.push(elem);
                 }
             },
@@ -162,7 +163,7 @@ app=new Vue({
 
             $.ajax({
                 type: 'POST',
-                url: 'listar_recomendados',
+                url: '../listar_recomendados',
                 headers: { "X-CSRFToken": getCookie("csrftoken")},
                 success: function (s) {
 
@@ -170,7 +171,7 @@ app=new Vue({
                     if(s.estado==0){
                         for(var i=0;i<s.recomendados.length;i++){
                             pru = s.recomendados;
-                            var elem = {nombre: s.recomendados[i][0].nombre,imagen:s.recomendados[i][0].nombre,descripcion:s.recomendados[i][0].creador,url:'./juegos/'+s.recomendados[i][0].nombre}
+                            var elem = {nombre: s.recomendados[i][0].nombre,imagen:s.recomendados[i][0].nombre,descripcion:s.recomendados[i][0].creador,url:globals.juegos+s.recomendados[i][0].nombre}
 
                             app.recomendados.push(elem);
                         }
@@ -178,7 +179,7 @@ app=new Vue({
                     else{
                         for(var i=0;i<s.recomendados.length;i++){
                             pru = s.recomendados;
-                            var elem = {nombre: s.recomendados[i].nombre,imagen:s.recomendados[i].nombre,descripcion:s.recomendados[i].creador,url:'./juegos/'+s.recomendados[i].nombre}
+                            var elem = {nombre: s.recomendados[i].nombre,imagen:s.recomendados[i].nombre,descripcion:s.recomendados[i].creador,url:globals.juegos+s.recomendados[i].nombre}
 
                             app.recomendados.push(elem);
                         }
