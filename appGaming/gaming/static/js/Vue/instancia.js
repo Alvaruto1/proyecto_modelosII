@@ -7,6 +7,8 @@ app=new Vue({
         a2: '',
         a3: '',
         a4: '',
+        b1: '',
+        b2: 'active',
         panel: 0,
         busqueda: '',
         juegosTienda: [
@@ -73,19 +75,22 @@ app=new Vue({
                 nombre: 'Juego3',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 5
             },
             {
                 nombre: 'Juego4',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 5
             },
             {
                 nombre: 'Juego5',
                 imagen: 'https://cdn3.ipadizate.es/2016/04/wallpaper-naturaleza-9-320x568.jpg',
                 descripcion: 'Hola a todos',
-                url: 'Hola a todos'
+                url: 'Hola a todos',
+                puntaje : 5
             }
         ],
     },
@@ -127,8 +132,13 @@ app=new Vue({
             }
         },
         cambiarPanel(pagina) {
+            this.b1 = '';
+            this.b2 = '';
+
             switch (pagina) {
                 case 0:
+                    this.b1='active';
+                    this.b2='';
                     this.panel = 0;
                     break;
                 case 1:
@@ -139,7 +149,9 @@ app=new Vue({
                     break;
                 case 3:
                     this.panel = 3;
+
                     this.puntajes();
+
                     break;
             }
         },
@@ -163,16 +175,16 @@ app=new Vue({
                     if(s.estado==0){
                         for(var i=0;i<s.recomendados.length;i++){
                             pru = s.recomendados;
-                            var elem = {nombre: s.recomendados[i][0].nombre,imagen:s.recomendados[i][0].nombre,descripcion:s.recomendados[i][0].creador,url:globals.juegos+s.recomendados[i][0].nombre}
-
+                            var elem = {nombre: s.recomendados[i][0].nombre,imagen:s.recomendados[i][0].nombre,descripcion:s.recomendados[i][0].creador,url:globals.juegos+s.recomendados[i][0].nombre,puntaje:s.puntaje[i]}
+                            console.log(s.recomendados[i][0].nombre);
                             app.recomendados.push(elem);
                         }
                     }
                     else{
                         for(var i=0;i<s.recomendados.length;i++){
                             pru = s.recomendados;
-                            var elem = {nombre: s.recomendados[i].nombre,imagen:s.recomendados[i].nombre,descripcion:s.recomendados[i].creador,url:globals.juegos+s.recomendados[i].nombre}
-
+                            var elem = {nombre: s.recomendados[i].nombre,imagen:s.recomendados[i].nombre,descripcion:s.recomendados[i].creador,url:globals.juegos+s.recomendados[i].nombre,puntaje:s.puntaje[i]}
+                            console.log(s.recomendados[i][0].nombre);
                             app.recomendados.push(elem);
                         }
                     }

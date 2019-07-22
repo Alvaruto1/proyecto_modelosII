@@ -23,9 +23,9 @@ footer{
     border-bottom: #080808 5px solid;
 }
 #control{
-  padding:;
+
   text-align: center;
-  margin: ;
+
 }
 img{
   padding-top: 30px;
@@ -35,4 +35,7 @@ img{
 }
 body{
   background-image: url("https://i.pinimg.com/originals/21/e8/7e/21e87e501e1dec05b854ac67d8d0e45d.png");
+}
+#btnJugar{
+    width: 70px;
 }

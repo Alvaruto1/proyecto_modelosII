@@ -78,6 +78,7 @@ def listarRecomendados(request):
         if request.is_ajax():
             jugador = Jugador.objects.get(usuario_id=request.user.pk)
             recomendados= list(jugador.tiposRecomendados.all().values())
+            score = []
 
             juegos = list(Juego.objects.all().values())
 
@@ -94,7 +95,24 @@ def listarRecomendados(request):
             random.shuffle(juegosRecomendados)
             juegosRecomendados = juegosRecomendados[:10]
 
-            return JsonResponse({'recomendados':juegosRecomendados,'estado':1},content_type='application/json',safe=False)
+            print(juegosRecomendados)
+
+            puntajes = Puntaje.objects.filter(jugador_id=jugador.pk)
+
+            for x in juegosRecomendados:
+                estado = False
+                for y in puntajes:
+                    if x['id'] == y.juego.pk:
+
+                        score.append(y.valor)
+                        estado = True
+                        break
+                if not estado:
+                    score.append(0)
+            print(score,"-----------")
+            print (juegosRecomendados,"--------")
+
+            return JsonResponse({'recomendados':juegosRecomendados,'puntaje':score,'estado':1},content_type='application/json',safe=False)
 
 
 @csrf_exempt

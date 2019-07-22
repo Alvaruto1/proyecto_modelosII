@@ -1,7 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<html>
-    <head>
-        <title>Arkanoid</title>
+
+{% block title %}
+            Arkanoid
+{% endblock title %}
+
+
+        {% block head %}
         <link rel="stylesheet" type="text/css" href="{% static 'js/Juegos/arknoid/Estilo.css'%}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +14,10 @@
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 			  crossorigin="anonymous"></script>
-
-    </head>
-    <body>
-        <script>
+        {% endblock head %}
+    {% block content %}
+    <div>
+         <script>
             globals = {
                 'backgroundC': "{% static 'js/Juegos/arknoid/Imagenes/fondo.jpg' %}",
                 'backgroundA': "{% static 'js/Juegos/arknoid/Imagenes/fondo_arkanoid.jpg' %}",
@@ -23,13 +28,15 @@
         <div id="Juego">
             <canvas id="canvas"></canvas>
                 <div id="modelo">
-                    
+
                     <button id="inicio">
                         <img src="{% static 'js/Juegos/arknoid/Imagenes/jugar.jpg'%} "/>
                     </button>
-                    
-                </div>                 
+
+                </div>
         </div>
         <script src="{% static 'js/Juegos/arknoid/juego_arkanoid.js'%}"></script>
-    </body>
-</html>
+
+    </div>
+    {% endblock content %}
+
