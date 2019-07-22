@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gaming.views import InicioSesionView,RegistroView,principal\
-    ,SalirSesionView, listarTienda, jugar,registrarScore,listarRecomendados
-
-
+from gaming.views import InicioSesionView, RegistroView, principal \
+    , SalirSesionView, listarTienda, jugar, registrarScore, listarRecomendados, user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +27,7 @@ urlpatterns = [
     path('inicio_sesion/',InicioSesionView.as_view(),name='inicio_sesion'),
     path('salir/',SalirSesionView.as_view(),name='salir'),
     path('juegos/<str:juego>',jugar,name='juegos'),
-    path('juego/registra_score',registrarScore,name='registra_score')
+    path('juego/registra_score',registrarScore,name='registra_score'),
+    path('user/',user,name='usuario')
 
 ]

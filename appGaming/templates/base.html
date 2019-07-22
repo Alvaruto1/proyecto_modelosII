@@ -59,7 +59,7 @@
                         <button type="submit" class="btn btn-primary" @click="buscar(busqueda)">Submit</button>
                     </form>
                     {% if user.is_authenticated %}
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{ user.username }} </a></li>
+                        <li><a href="{% url 'usuario' %}"><span class="glyphicon glyphicon-user"></span> {{ user.username }} </a></li>
                         <li><a href="{% url 'salir' %}"><span class="glyphicon glyphicon-log-out"></span> Salir </a></li>
                     {% else %}
                         <li><a href="{% url 'inicio_sesion' %}" @click="CambiarPanel(0)"><span class="glyphicon glyphicon-user"></span> Iniciar </a></li>

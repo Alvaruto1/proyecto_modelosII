@@ -45,6 +45,11 @@ def principal(request):
     return render(request, template_name,context)
 
 
+def user(request):
+    template_name = 'gaming/usuario.html'
+    return render(request, template_name)
+
+
 @csrf_exempt
 def listarTienda(request):
     if request.is_ajax():

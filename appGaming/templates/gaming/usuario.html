@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ user.username }} {% endblock %}
+
+{% block content %}
+
+    <h3>Los datos del usuario son: </h3>
+    <p>
+    <ol>
+    <li>Nombre usuario: {{ user.username }} </li>
+    <li>Nombre: {{ user.first_name }} </li>
+    <li>Apellido: {{ user.last_name }} </li>
+    <li>Email: {{ user.email }} </li>
+    </ol>
+    </p>
+
+{% endblock content %}
