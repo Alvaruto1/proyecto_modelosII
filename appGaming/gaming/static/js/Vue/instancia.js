@@ -213,14 +213,17 @@ window.app=new Vue({
                     app.juegosTienda.push(elem);
 
                     app.nombresJuegos.push(s.tienda[i].nombre);
-                    if(s.ranking.length != 0){
-                       var elem1 = {nombre: s.ranking[i][0], valor:s.ranking[i][1], nombreJuego:s.ranking[i][2]}
+
+
+
+
+
+                }
+
+
+                for(var i=0; i<s.ranking.length;i++){
+                    var elem1 = {nombre: s.ranking[i][0], valor:s.ranking[i][1], nombreJuego:s.ranking[i][2]}
                         app.ranked.push(elem1);
-                    }
-
-
-
-
                 }
 
             },

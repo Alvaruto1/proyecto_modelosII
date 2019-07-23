@@ -24,26 +24,7 @@
     <favorites_list name="appGaming" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gaming/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="117" column="92" selection-start-line="117" selection-start-column="92" selection-end-line="117" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaming/static/js/Component/juego.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,12 +79,12 @@
         <option value="$PROJECT_DIR$/appGaming/urls.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/gaming/static/js/Component/juego.js" />
-        <option value="$PROJECT_DIR$/gaming/static/js/Vue/instancia.js" />
         <option value="$PROJECT_DIR$/gaming/views.py" />
+        <option value="$PROJECT_DIR$/gaming/static/js/Vue/instancia.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="500" />
     <option name="y" value="75" />
     <option name="width" value="960" />
@@ -123,78 +104,6 @@
               <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
               <item name="appGaming" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Juegos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Juegos" type="462c0819:PsiDirectoryNode" />
-              <item name="arknoid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Juegos" type="462c0819:PsiDirectoryNode" />
-              <item name="arknoid" type="462c0819:PsiDirectoryNode" />
-              <item name="Imagenes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="gaming" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Vue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appGaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appGaming" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="juegos" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -205,7 +114,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -318,11 +227,12 @@
       <workItem from="1563804632073" duration="5872000" />
       <workItem from="1563811007061" duration="8991000" />
       <workItem from="1563823794818" duration="38370000" />
+      <workItem from="1563864088752" duration="1122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130296000" />
+    <option name="totallyTimeSpent" value="131418000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -334,14 +244,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="500" y="75" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.089647815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17776097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.24561404" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.24549918" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -639,13 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaming/static/js/Vue/instancia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="202" column="20" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/juegos/arknoid.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
@@ -660,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaming/static/js/Component/juego.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/juegos/llorona.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -674,10 +569,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gaming/static/js/Component/juego.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaming/static/js/Vue/instancia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gaming/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="117" column="92" selection-start-line="117" selection-start-column="92" selection-end-line="117" selection-end-column="92" />
+        <state relative-caret-position="686">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
         </state>
       </provider>
     </entry>
