@@ -1,36 +1,38 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+{% block title %}
+           Ship
+{% endblock title %}
+
+{% block head %}
+
      <script
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 			  crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
+{% endblock head %}
 
-    
-    <script src="{% static 'js/Juegos/ship/scritpts/kiwi.min.js' %}"></script>
-    <script src="{% static 'js/Juegos/ship/scritpts/game.js'%}"></script>
+{% block content %}
+    <div id="conjuego">
+        <script src="{% static 'js/Juegos/ship/scritpts/kiwi.min.js' %}"></script>
+        <script src="{% static 'js/Juegos/ship/scritpts/game.js'%}"></script>
 
-<script>
-    globals = {
-            'back': '{% static "js/Juegos/ship/images/back.jpg" %}',
-            'enemy': '{% static "js/Juegos/ship/images/enemy.png" %}',
-            'enemy_shoot': '{% static "js/Juegos/ship/images/enemy_shoot.png" %}',
-            'player': '{% static "js/Juegos/ship/images/player.PNG" %}',
-            'ship': '{% static "js/Juegos/ship/images/ship.png" %}',
-            'shoot': '{% static "js/Juegos/ship/images/shoot.png" %}',
+        <script>
+                globals = {
+                        'back': '{% static "js/Juegos/ship/images/back.jpg" %}',
+                        'enemy': '{% static "js/Juegos/ship/images/enemy.png" %}',
+                        'enemy_shoot': '{% static "js/Juegos/ship/images/enemy_shoot.png" %}',
+                        'player': '{% static "js/Juegos/ship/images/player.PNG" %}',
+                        'ship': '{% static "js/Juegos/ship/images/ship.png" %}',
+                        'shoot': '{% static "js/Juegos/ship/images/shoot.png" %}',
 
-        }
+                    }
 
-</script>
+        </script>
+
+    </div>
+{% endblock content %}
 
 
-
-</body>
-</html>

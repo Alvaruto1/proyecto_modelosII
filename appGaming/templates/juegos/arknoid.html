@@ -17,6 +17,7 @@
         {% endblock head %}
     {% block content %}
     <div>
+
          <script>
             globals = {
                 'backgroundC': "{% static 'js/Juegos/arknoid/Imagenes/fondo.jpg' %}",
@@ -24,7 +25,9 @@
                 'barra': "{% static 'js/Juegos/arknoid/Imagenes/barra.PNG' %}",
                 'ladrillo': "{% static 'js/Juegos/arknoid/Imagenes/ladrillo.PNG' %}",
             }
+
         </script>
+        <script src="{% static 'js/Juegos/arknoid/juego_arkanoid.js'%}"></script>
         <div id="Juego">
             <canvas id="canvas"></canvas>
                 <div id="modelo">
@@ -35,7 +38,7 @@
 
                 </div>
         </div>
-        <script src="{% static 'js/Juegos/arknoid/juego_arkanoid.js'%}"></script>
+
 
     </div>
     {% endblock content %}

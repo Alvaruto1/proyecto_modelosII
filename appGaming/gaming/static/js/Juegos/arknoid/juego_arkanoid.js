@@ -298,7 +298,8 @@ function levelUp(){
 }
 
 function iniciarJuego(){
-    
+
+    alert();
     var modelo = document.getElementById("modelo");
     modelo.style.display = "none";
     fotogramas();
@@ -326,7 +327,7 @@ function perderVida(){
 
 function finalizarJuego(){
     
-    document.location.reload();
+    //document.location.reload();
     
 }
 

@@ -1,5 +1,5 @@
 (function() {
-  const game = new Kiwi.Game();
+  const game = new Kiwi.Game(domParent='conjuego');
 
   const state = new Kiwi.State('state');
   const lostState = new Kiwi.State('lostState');

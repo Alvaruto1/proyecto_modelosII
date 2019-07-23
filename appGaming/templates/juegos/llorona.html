@@ -1,12 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="Juego llorona">
-		<meta name="keywords" content="canvas colisiones jquery ajax">
-		<meta name="author" content="Alejandro Daza">
-		<title>La leyenda de la llorona</title>
+
+
+{% block title %}
+           Ship
+{% endblock title %}
+
+{% block head %}
 		
 		<link rel="stylesheet" type="text/css" href="{% static 'js/Juegos/llorona/estilos/default.css'%}" media="screen">
 		<script src="{% static 'js/Juegos/llorona/js/jquery-1.11.0.min.js'%}" language="JavaScript1.2"></script>
@@ -14,10 +14,10 @@
 		<script src="{% static 'js/Juegos/llorona/js/calaca.js'%}" language="JavaScript1.2"></script>
 		<script src="{% static 'js/Juegos/llorona/js/script.js'%}" language="JavaScript1.2"></script>
 
+{% endblock head %}
 		
-		
-	</head>
-	<body>
+{% block content %}
+
 		<section>
 			<canvas id="mi_canvas" width="640" height="480">
 				Tu navegador no es compatible
@@ -55,6 +55,4 @@
 		<img id="calaca_1" src="{% static 'js/Juegos/llorona/imagenes/calaca_child.png'%}"/>
 		<img id="calaca_2" src="{% static 'js/Juegos/llorona/imagenes/calaca_girl.png'%}"/>
 		
-		
-	</body>
-</html>
+{% endblock content %}
