@@ -10,17 +10,24 @@ Vue.component('juego',{
         <p><b>Puntaje:</b> {{ puntaje }}</p>
         <a id="btnJugar" class="btn btn-success " :href="url" role="button">Play</a>
          
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Ranking</button>
+      <button type="button" class="btn btn-primary" :value="nombre" data-toggle="modal" data-target=".bd-example-modal-sm" @click="botonActivoRanking(nombre)">Ranking</button>
+      
       </div>
-      
-      
-
     </div>
   </div>
   `,
   props: ['nombre','imagen','descripcion','url','puntaje'],
+  methods: {
+           botonActivoRanking(nombre){
+            window.app.botonActivoRanking(nombre);
+            window.app.conteoJugar(nombre);
+        },
+
+  },
+
   data(){
     return{
+
     }
   }
 })

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+		{% block title %}
+            La Gallina
+        {% endblock title %}
+		
+
+        {% block head %}
+            <link rel="stylesheet" type="text/css" href="{% static 'js/Juegos/gallina/estilos/default.css' %}" media="screen">
+            <script src="{% static 'js/Juegos/gallina/js/jquery-1.11.0.min.js'%}" language="JavaScript1.2"></script>
+            <script src="{% static 'js/Juegos/gallina/js/quica.js'%}" language="JavaScript1.2"></script>
+            <script src="{% static 'js/Juegos/gallina/js/calaca.js'%}" language="JavaScript1.2"></script>
+            <script src="{% static 'js/Juegos/gallina/js/script.js'%}" language="JavaScript1.2" ></script>
+        {% endblock head %}
+
+        {% block content %}
+        <div>
+            <section>
+			<canvas id="mi_canvas" width="640" height="480">
+				Tu navegador no es compatible
+			</canvas>
+            </section>
+            <section>
+                <div id="popup" style="display: none;">
+                    <div class="content-popup">
+                        <div class="close"><a href="#" id="close"><img src="{% static 'js/Juegos/gallina/imagenes/close.png'%}"/></a></div>
+                        <div>
+                           <h2>Teclas de juego</h2>
+                           <img src="{% static 'js/Juegos/gallina/imagenes/teclado.png' %}"/>
+                           <h2>Creditos</h2>
+                           <p>Alvaro Niño, Nicolas Herrera, Sebastian Chacon</p>
+                            <p>Ingenieria Sistrmas</p>
+                            <p>U Distrital</p>
+                        </div>
+                    </div>
+                </div>
+                <h1>La Gallina</h1>
+                <button id="instrucciones">Ver Instrucciones</button><br>
+                <button id="iniciar">Iniciar</button>
+            </section>
+            <audio id="pierde">
+                <source src="{% static 'js/Juegos/gallina/sonidos/pierde_vida.ogg'%}" type="audio/ogg">
+                <source src="{% static 'js/Juegos/gallina/sonidos/pierde_vida.mp3'%}" type="audio/mpeg">
+                <source src="{% static 'js/Juegos/gallina/sonidos/pierde_vida.wav'%}" type="audio/wav">
+                Tu navegador no es compatible
+            </audio>
+
+            <img id="imagen" src="{% static 'js/Juegos/gallina/imagenes/imagen.png'%}"/>
+            <img id="vehiculo_1" src="{% static 'js/Juegos/gallina/imagenes/vehiculo1.png'%}"/>
+            <img id="vehiculo_2" src="{% static 'js/Juegos/gallina/imagenes/vehiculo2.png'%}"/>
+
+        </div>
+		{% endblock content %}
+		
+

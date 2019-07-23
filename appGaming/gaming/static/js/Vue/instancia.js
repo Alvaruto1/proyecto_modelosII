@@ -1,4 +1,4 @@
-app=new Vue({
+window.app=new Vue({
     el: '#app',
     data: {
         j:0,
@@ -9,8 +9,11 @@ app=new Vue({
         a4: '',
         b1: '',
         b2: 'active',
+        ranked: [],
         panel: 0,
         busqueda: '',
+        rankingActivo:'',
+
         juegosTienda: [
             {
                 nombre: 'Juego1',
@@ -201,16 +204,48 @@ app=new Vue({
             headers: { "X-CSRFToken": getCookie("csrftoken")},
             success: function (s) {
                 app.juegosTienda = [];
+                app.ranked = [];
+                app.nombresJuegos = [];
                 for(var i=0;i<s.tienda.length;i++){
-                    var elem = {nombre: s.tienda[i].nombre,imagen:s.tienda[i].nombre,descripcion:s.tienda[i].creador,url:"../juegos/"+s.tienda[i].nombre, puntaje: s.puntaje[i]};
-
+                    var elem = {nombre: s.tienda[i].nombre,imagen:s.tienda[i].nombre,descripcion:s.tienda[i].creador,url:"../juegos/"+s.tienda[i].nombre, puntaje: s.puntaje[i]}
                     app.juegosTienda.push(elem);
+
+                    app.nombresJuegos.push(s.tienda[i].nombre);
+                    if(s.ranking.length != 0){
+                       var elem1 = {nombre: s.ranking[i][0], valor:s.ranking[i][1], nombreJuego:s.ranking[i][2]}
+                        app.ranked.push(elem1);
+                    }
+
+
                 }
+
             },
             processData: false,
             contentType: false,
         });
 
+        },
+
+        conteoJugar(nombre){
+            $.ajax({
+            type: 'POST',
+            url: '../juegos/'+nombre,
+            headers: { "X-CSRFToken": getCookie("csrftoken")},
+                data: {estado: 5},
+            success: function (s) {
+
+            },
+            processData: false,
+            contentType: false,
+        });
+
+
+
+        },
+
+        botonActivoRanking(nombre){
+
+            this.rankingActivo = nombre;
         },
 
     }

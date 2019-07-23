@@ -30,4 +30,5 @@ urlpatterns = [
     path('juego/registra_score',registrarScore,name='registra_score'),
     path('user/',user,name='usuario')
 
+
 ]

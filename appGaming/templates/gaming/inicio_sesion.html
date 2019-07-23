@@ -3,7 +3,7 @@
 {% block title %}Inicia Sesión{% endblock %}
 
 {% block content %}
-    <form method="POST">
+    <form method="POST" id="fondo2">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" name="submit">

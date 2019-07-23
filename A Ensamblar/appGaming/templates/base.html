@@ -1,0 +1,191 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+
+    {% endblock head %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+
+    <script src="{% static 'js/Component/juego.js' %}"></script>
+    <script src="{% static 'js/Component/inicio.js' %}"></script>
+    <script src="{% static 'js/Component/contacto.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/diseño.css' %}">
+
+<body>
+
+<script>
+    globals={
+        'juegos': "http://{{ request.get_host }}/juegos/",
+    }
+</script>
+
+<div id="app">
+
+    <div class="container-fluid text-center">
+        <center>
+            <img class="img img-responsive text-center" src="{% static 'css/Captura.PNG' %}"
+                 height="150">
+            </center>
+    </div>
+    <br>
+    <nav class="navbar navbar-inverse" id="navegacion">
+        <div class="container-fluid ">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}">Gaming++</a>
+            </div>
+            <div class="collapse navbar-collapse " id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a @click="cambiarPanel(3)" class="font-weight-bold"> Inicio </a></li>
+                    <li><a @click="cambiarPanel(1)" class="font-weight-bold">¿Quienes somos?</a></li>
+                    <li><a @click="cambiarPanel(2)" class="font-weight-bold"> Contacto </a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left" action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search" v-model="busqueda"
+                                   @keyup.enter="buscar(busqueda)" id="busqueda">
+                        </div>
+                        <button type="submit" class="btn btn-primary" @click="buscar(busqueda)">Submit</button>
+                    </form>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'usuario' %}"><span class="glyphicon glyphicon-user"></span> {{ user.username }} </a></li>
+                        <li><a href="{% url 'salir' %}"><span class="glyphicon glyphicon-log-out"></span> Salir </a></li>
+                    {% else %}
+                        <li><a href="{% url 'inicio_sesion' %}" @click="CambiarPanel(0)"><span class="glyphicon glyphicon-user"></span> Iniciar </a></li>
+                        <li><a href=" {% url 'registro' %}"><span class="glyphicon glyphicon-log-in"></span> Resgistro </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <span v-if="panel === 3" :class="b2">
+
+        <div class="container-fluid" id="">
+        <div class="row">
+          <div class="col-sm-1 sidenav hidden-xs " id="color">
+
+          </div>
+          <div class="col-sm-2 sidenav hidden-xs " id="fondo1">
+            <ul class="nav nav-pills nav-stacked " id="control">
+              <li :class="a1"><a @click="cambiarPestaña(0)">Tienda</a></li>
+              <li :class="a2"><a @click="cambiarPestaña(1)"> My Library </a></li>
+              <li :class="a3"><a @click="cambiarPestaña(2)"> Trending </a></li>
+                {% if user.is_authenticated %}
+              <li :class="a4"><a @click="cambiarPestaña(3)">Recomendados</a></li>
+                {% endif %}
+            </ul>
+          </div>
+          <div class="col-sm-8 col-lg-8" id="fondo">
+            <div class="container" id="conjuego">
+              <div class="row" v-if="j === 0">
+                    <span v-if="p === 0">
+                      <div v-for="x of juegosTienda">
+                          {% if user.is_authenticated %}
+                            <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                          {% else %}
+                              <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
+                          {% endif %}
+                      </div>
+                    </span>
+
+                    <span v-if="p === 1">
+                      <div v-for="x of libreria">
+                        <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
+                      </div>
+                    </span>
+
+                    <span v-if="p === 2">
+                      <div v-for="x of trending">
+                        <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
+                      </div>
+                    </span>
+                    <span v-if="p === 3">
+                      <div v-for="x of recomendados">
+                          <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion" :url="x.url"></juego>
+                      </div>
+                    </span>
+                    <span v-if="p === 4">
+                      <div v-for="x of juegosTienda">
+                        <span v-if="busqueda === x.nombre">
+                        <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
+                        </span>
+                      </div>
+                    </span>
+              </div>
+
+            </div>
+        </div>
+
+      </div>
+      </div>
+
+
+        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Nombre Usuario</th>
+                              <th scope="col">Puntaje</th>
+                              <th scope="col">fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <div v-for="x of trending">
+
+                                <ranking :nombre="x.nombre" :fecha="x.fecha" :valor="x.valor"></ranking>
+
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+    </span>
+
+    <span v-if="panel === 0" :class="b1">
+        <div class="container">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+
+    </span>
+    <span v-if="panel === 1" :class="b2">
+      <inicio></inicio>
+    </span>
+    <span v-if="panel === 2" :class="b2">
+      <contacto></contacto>
+    </span>
+    <br>
+    <footer class="container-fluid text-center">
+        <br>
+    </footer>
+
+
+</div>
+<script src="{% static 'js/Vue/instancia.js' %}"></script>
+</body>
+</html>

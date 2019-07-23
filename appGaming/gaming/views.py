@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from django.views.generic import CreateView, TemplateView
 
-from .models import Jugador, Juego, Recomendado, Puntaje, Tipo
+from .models import Jugador, Juego, Recomendado, Puntaje, Tipo, User
 
 from .forms import SignUpForm
 import random
@@ -55,6 +55,8 @@ def listarTienda(request):
     if request.is_ajax():
         tienda = list(Juego.objects.all().values())
         tienda1 = Juego.objects.all()
+
+        rankListJuego = []
         score = []
         if request.user.is_authenticated:
             jugador = Jugador.objects.get(usuario_id=request.user.pk)
@@ -69,7 +71,22 @@ def listarTienda(request):
                         break
                 if not estado:
                     score.append(0)
-        return JsonResponse({'tienda':tienda,'puntaje':score},content_type='application/json',safe=False)
+
+            for juego in tienda1:
+                ranking1 = Puntaje.objects.filter(juego_id= juego.pk).order_by("-valor")
+
+                for ran in ranking1:
+                    idUsuario = Jugador.objects.get(id=ran.jugador.pk).usuario.pk
+                    jugador = User.objects.get(id=idUsuario)
+                    aux = [jugador.username, ran.valor, juego.nombre]
+                    rankListJuego.append(aux)
+
+
+            print(rankListJuego)
+
+
+
+        return JsonResponse({'tienda':tienda,'puntaje':score,'ranking':rankListJuego},content_type='application/json',safe=False)
 
 
 @csrf_exempt
@@ -95,7 +112,7 @@ def listarRecomendados(request):
             random.shuffle(juegosRecomendados)
             juegosRecomendados = juegosRecomendados[:10]
 
-            print(juegosRecomendados)
+
 
             puntajes = Puntaje.objects.filter(jugador_id=jugador.pk)
 
@@ -109,10 +126,10 @@ def listarRecomendados(request):
                         break
                 if not estado:
                     score.append(0)
-            print(score,"-----------")
-            print (juegosRecomendados,"--------")
 
             return JsonResponse({'recomendados':juegosRecomendados,'puntaje':score,'estado':1},content_type='application/json',safe=False)
+
+
 
 
 @csrf_exempt
@@ -147,18 +164,23 @@ def jugar(request, juego):
     if request.user.is_authenticated:
         juegoN = Juego.objects.get(nombre=juego)
         jugador = Jugador.objects.get(usuario_id=request.user.pk)
-        try:
-            recomendados = list(jugador.tiposRecomendados.filter(tipo_id=juegoN.tipo))
-            recomendado = recomendados[0]
-            cont = recomendado.cantidad
-            recomendado.cantidad = cont + 1
-            recomendado.save()
-        except IndexError:
-            recomendado = Recomendado()
-            recomendado.tipo = juegoN.tipo
-            recomendado.cantidad = 0
-            recomendado.save()
-            jugador.tiposRecomendados.add(recomendado)
+        # verificar acuerdense
+        estado = request.POST['estado'];
+
+        print('estado', estado)
+        if estado == 5:
+            try:
+                recomendados = list(jugador.tiposRecomendados.filter(tipo_id=juegoN.tipo))
+                recomendado = recomendados[0]
+                cont = recomendado.cantidad
+                recomendado.cantidad = cont + 1
+                recomendado.save()
+            except IndexError:
+                recomendado = Recomendado()
+                recomendado.tipo = juegoN.tipo
+                recomendado.cantidad = 0
+                recomendado.save()
+                jugador.tiposRecomendados.add(recomendado)
 
         template_name = 'juegos/'+juego+'.html'
         return render(request,template_name,None)

@@ -19,6 +19,7 @@
 
 
     <script src="{% static 'js/Component/juego.js' %}"></script>
+    <script src="{% static 'js/Component/ranking.js' %}"></script>
     <script src="{% static 'js/Component/inicio.js' %}"></script>
     <script src="{% static 'js/Component/contacto.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/diseño.css' %}">
@@ -140,23 +141,22 @@
         <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Nombre Usuario</th>
-                              <th scope="col">Puntaje</th>
-                              <th scope="col">fecha</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <div v-for="x of trending">
+                    <center>
+                    <h3><b>Ranking juegos</b></h3>
+                        <span class="col-sm-6"><b>Usuario</b></span><span class="col-sm-6"><b>Puntaje</b></span>
 
-                                <ranking :nombre="x.nombre" :fecha="x.fecha" :valor="x.valor"></ranking>
+                        </hr>
+                        <div v-for="x of ranked">
+                            <span v-if="rankingActivo === x.nombreJuego">
 
-                            </div>
-                        </tbody>
-                    </table>
+                                <ranking id="" :nombre="x.nombre" :valor="x.valor"></ranking>
+
+                            </span>
+                        </div>
+                    </center>
+
+
+
                 </div>
             </div>
         </div>

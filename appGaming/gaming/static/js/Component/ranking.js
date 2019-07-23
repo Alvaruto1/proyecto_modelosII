@@ -1,18 +1,18 @@
 Vue.component('ranking',{
   template:
   `
-  <div class="">
-  <tr>
-    <th scope="row"></th>
-      <td>{{ nombre }}</td>
-      <td>{{ valor }}</td>
-      <td>{{ fecha }}</td>
-    </tr> 
-  </div>
+  
+    <div class="border">
+   
+      <span class="col-sm-6">{{ nombre }} </span><span class="col-sm-6">{{ valor }} </span>
+     
+    </div>
+
   `,
-  props: ['nombre','valor','fecha','juego'],
+  props: ['nombre','valor','nombre_juego'],
   data(){
     return{
+
     }
   }
 })

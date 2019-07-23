@@ -3,15 +3,35 @@
 {% block title %}{{ user.username }} {% endblock %}
 
 {% block content %}
+    <div id="fondo2">
+        <center>
+            <h3> <b>Datos usuario</b> </h3>
+            <br>
 
-    <h3>Los datos del usuario son: </h3>
-    <p>
-    <ol>
-    <li>Nombre usuario: {{ user.username }} </li>
-    <li>Nombre: {{ user.first_name }} </li>
-    <li>Apellido: {{ user.last_name }} </li>
-    <li>Email: {{ user.email }} </li>
-    </ol>
-    </p>
+            <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">Alias:</th>
+              <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Nombre:</th>
+              <td>{{ user.first_name }}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Apellido:</th>
+              <td>{{ user.last_name }}</td>
+
+            </tr>
+            <tr>
+              <th scope="row">Email:</th>
+              <td>{{ user.email }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+        </center>
+    </div>
 
 {% endblock content %}
