@@ -86,8 +86,7 @@
           <div class="col-sm-2 sidenav hidden-xs " id="fondo1">
             <ul class="nav nav-pills nav-stacked " id="control">
               <li :class="a1"><a @click="cambiarPestaña(0)">Tienda</a></li>
-              <li :class="a2"><a @click="cambiarPestaña(1)"> My Library </a></li>
-              <li :class="a3"><a @click="cambiarPestaña(2)"> Trending </a></li>
+
                 {% if user.is_authenticated %}
               <li :class="a4"><a @click="cambiarPestaña(3)">Recomendados</a></li>
                 {% endif %}
@@ -99,33 +98,84 @@
                     <span v-if="p === 0">
                       <div v-for="x of juegosTienda">
                           {% if user.is_authenticated %}
-                            <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            <span v-if="x.nombre === 'head_game'">
+                                <juego :nombre="x.nombre" imagen='https://www.anipedia.net/imagenes/serpiente-bastarda-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                            <span v-if="x.nombre === 'penguin'">
+                                <juego :nombre="x.nombre" imagen='https://www.definicionabc.com/wp-content/uploads/tecnologia/SuSE-openSUSE-pinguino-retro-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'ship'">
+                                <juego :nombre="x.nombre" imagen='https://3.imimg.com/data3/PM/XY/MY-10951261/naval-ship-design-250x250.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'snake'">
+                                <juego :nombre="x.nombre" imagen='https://www.anipedia.net/imagenes/serpiente-bastarda-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'arknoid'">
+                                <juego :nombre="x.nombre" imagen='https://i.poki.com/q80,w250,h150,g123109,-sparkanoid.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'gallina'">
+                                <juego :nombre="x.nombre" imagen='https://venezuelatuya.com/refranes/imagenes/cucarachaenbailedegallinas250.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'llorona'">
+                                <juego :nombre="x.nombre" imagen='http://www.gamecored.com/wp-content/uploads/2019/04/ARTE-PREESTRENO-LA-LLORONA_2-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" ></juego>
+                            </span>
                           {% else %}
-                              <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
+                              <span v-if="x.nombre === 'head_game'">
+                                <juego :nombre="x.nombre" imagen='https://www.anipedia.net/imagenes/serpiente-bastarda-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" estado="disabled"></juego>
+                            </span>
+                            <span v-if="x.nombre === 'penguin'">
+                                <juego :nombre="x.nombre" imagen='https://www.definicionabc.com/wp-content/uploads/tecnologia/SuSE-openSUSE-pinguino-retro-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" estado="disabled"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'ship'">
+                                <juego :nombre="x.nombre" imagen='https://3.imimg.com/data3/PM/XY/MY-10951261/naval-ship-design-250x250.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" estado="disabled"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'snake'">
+                                <juego :nombre="x.nombre" imagen='https://www.anipedia.net/imagenes/serpiente-bastarda-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" estado="disabled"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'arknoid'">
+                                <juego :nombre="x.nombre" imagen='https://i.poki.com/q80,w250,h150,g123109,-sparkanoid.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" estado="disabled"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'gallina'">
+                                <juego :nombre="x.nombre" imagen='https://venezuelatuya.com/refranes/imagenes/cucarachaenbailedegallinas250.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" estado="disabled"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'llorona'">
+                                <juego :nombre="x.nombre" imagen='http://www.gamecored.com/wp-content/uploads/2019/04/ARTE-PREESTRENO-LA-LLORONA_2-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" estado="disabled"></juego>
+                            </span>
+
                           {% endif %}
                       </div>
                     </span>
 
-                    <span v-if="p === 1">
-                      <div v-for="x of libreria">
-                        <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
-                      </div>
-                    </span>
-
-                    <span v-if="p === 2">
-                      <div v-for="x of trending">
-                        <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
-                      </div>
-                    </span>
                     <span v-if="p === 3">
                       <div v-for="x of recomendados">
-                          <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion" :url="x.url"></juego>
+                          <span v-if="x.nombre === 'head_game'">
+                                <juego :nombre="x.nombre" imagen='https://www.anipedia.net/imagenes/serpiente-bastarda-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                            <span v-if="x.nombre === 'penguin'">
+                                <juego :nombre="x.nombre" imagen='https://www.definicionabc.com/wp-content/uploads/tecnologia/SuSE-openSUSE-pinguino-retro-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'ship'">
+                                <juego :nombre="x.nombre" imagen='https://3.imimg.com/data3/PM/XY/MY-10951261/naval-ship-design-250x250.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'snake'">
+                                <juego :nombre="x.nombre" imagen='https://www.anipedia.net/imagenes/serpiente-bastarda-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'arknoid'">
+                                <juego :nombre="x.nombre" imagen='https://i.poki.com/q80,w250,h150,g123109,-sparkanoid.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'gallina'">
+                                <juego :nombre="x.nombre" imagen='https://venezuelatuya.com/refranes/imagenes/cucarachaenbailedegallinas250.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje"></juego>
+                            </span>
+                              <span v-if="x.nombre === 'llorona'">
+                                <juego :nombre="x.nombre" imagen='http://www.gamecored.com/wp-content/uploads/2019/04/ARTE-PREESTRENO-LA-LLORONA_2-250x150.jpg' :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" ></juego>
+                            </span>
+
                       </div>
                     </span>
                     <span v-if="p === 4">
                       <div v-for="x of juegosTienda">
                         <span v-if="busqueda === x.nombre">
-                        <juego :nombre="x.nombre" :imagen="x.imagen" :descripcion="x.descripcion"></juego>
+                            <juego :nombre="x.nombre" :descripcion="x.descripcion" :url="x.url" :puntaje="x.puntaje" ></juego>
                         </span>
                       </div>
                     </span>

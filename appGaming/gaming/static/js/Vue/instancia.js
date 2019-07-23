@@ -11,6 +11,13 @@ window.app=new Vue({
         b2: 'active',
         ranked: [],
         panel: 0,
+        img0: 'https://www.justomunoz.es/imagenes/deportes/1_futbol.jpg',
+        img1: 'https://www.definicionabc.com/wp-content/uploads/tecnologia/SuSE-openSUSE-pinguino-retro-250x150.jpg',
+        img2: 'https://3.imimg.com/data3/PM/XY/MY-10951261/naval-ship-design-250x250.jpg',
+        img3: 'https://www.anipedia.net/imagenes/serpiente-bastarda-250x150.jpg',
+        img4: 'https://i.poki.com/q80,w250,h150,g123109,-sparkanoid.jpg',
+        img5: 'https://venezuelatuya.com/refranes/imagenes/cucarachaenbailedegallinas250.jpg',
+        img6: 'http://www.gamecored.com/wp-content/uploads/2019/04/ARTE-PREESTRENO-LA-LLORONA_2-250x150.jpg',
         busqueda: '',
         rankingActivo:'',
 
@@ -243,6 +250,7 @@ window.app=new Vue({
 
     }
 })
+
 var pru;
 
 function getCookie(c_name)
