@@ -126,7 +126,7 @@ def listarRecomendados(request):
                         break
                 if not estado:
                     score.append(0)
-
+            print(score)
             return JsonResponse({'recomendados':juegosRecomendados,'puntaje':score,'estado':1},content_type='application/json',safe=False)
 
 
@@ -165,10 +165,11 @@ def jugar(request, juego):
         juegoN = Juego.objects.get(nombre=juego)
         jugador = Jugador.objects.get(usuario_id=request.user.pk)
         # verificar acuerdense
-        estado = request.POST['estado'];
+        print('peticion')
 
-        print('estado', estado)
-        if estado == 5:
+
+        if request.is_ajax():
+            print('estado')
             try:
                 recomendados = list(jugador.tiposRecomendados.filter(tipo_id=juegoN.tipo))
                 recomendado = recomendados[0]

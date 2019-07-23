@@ -175,9 +175,11 @@ window.app=new Vue({
                 success: function (s) {
 
                     app.recomendados = [];
+                    pru = s;
                     if(s.estado==0){
+
                         for(var i=0;i<s.recomendados.length;i++){
-                            pru = s.recomendados;
+
                             var elem = {nombre: s.recomendados[i][0].nombre,imagen:s.recomendados[i][0].nombre,descripcion:s.recomendados[i][0].creador,url:"../juegos/"+s.recomendados[i][0].nombre,puntaje:s.puntaje[i]}
 
                             app.recomendados.push(elem);
@@ -185,7 +187,7 @@ window.app=new Vue({
                     }
                     else{
                         for(var i=0;i<s.recomendados.length;i++){
-                            pru = s.recomendados;
+                            //pru = s.recomendados;
                             var elem = {nombre: s.recomendados[i].nombre,imagen:s.recomendados[i].nombre,descripcion:s.recomendados[i].creador,url:"../juegos/"+s.recomendados[i].nombre,puntaje:s.puntaje[i]}
 
                             app.recomendados.push(elem);
@@ -217,6 +219,8 @@ window.app=new Vue({
                     }
 
 
+
+
                 }
 
             },
@@ -226,24 +230,10 @@ window.app=new Vue({
 
         },
 
-        conteoJugar(nombre){
-            $.ajax({
-            type: 'POST',
-            url: '../juegos/'+nombre,
-            headers: { "X-CSRFToken": getCookie("csrftoken")},
-                data: {estado: 5},
-            success: function (s) {
 
-            },
-            processData: false,
-            contentType: false,
-        });
-
-
-
-        },
 
         botonActivoRanking(nombre){
+
 
             this.rankingActivo = nombre;
         },

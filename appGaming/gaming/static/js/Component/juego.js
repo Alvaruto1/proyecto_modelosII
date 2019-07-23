@@ -8,7 +8,7 @@ Vue.component('juego',{
       <div class="panel-footer">
         <p><b>Creador:</b> {{ descripcion }}</p>
         <p><b>Puntaje:</b> {{ puntaje }}</p>
-        <a id="btnJugar" class="btn btn-success " :href="url" role="button">Play</a>
+        <a id="btnJugar" class="btn btn-success " :href="url" role="button" @click="conteoJugar(nombre)">Play</a>
          
       <button type="button" class="btn btn-primary" :value="nombre" data-toggle="modal" data-target=".bd-example-modal-sm" @click="botonActivoRanking(nombre)">Ranking</button>
       
@@ -20,7 +20,24 @@ Vue.component('juego',{
   methods: {
            botonActivoRanking(nombre){
             window.app.botonActivoRanking(nombre);
-            window.app.conteoJugar(nombre);
+
+        },
+      conteoJugar(nombre){
+            alert(nombre);
+            $.ajax({
+            type: 'POST',
+            url: '../juegos/'+nombre,
+            headers: { "X-CSRFToken": getCookie("csrftoken")},
+            success: function (s) {
+                alert("algo");
+
+            },
+            processData: false,
+            contentType: false,
+        });
+
+
+
         },
 
   },
