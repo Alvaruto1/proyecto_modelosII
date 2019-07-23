@@ -23,13 +23,12 @@ Vue.component('juego',{
 
         },
       conteoJugar(nombre){
-            alert(nombre);
+
             $.ajax({
             type: 'POST',
             url: '../juegos/'+nombre,
             headers: { "X-CSRFToken": getCookie("csrftoken")},
             success: function (s) {
-                alert("algo");
 
             },
             processData: false,

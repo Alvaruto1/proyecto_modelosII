@@ -91,43 +91,53 @@ def listarTienda(request):
 
 @csrf_exempt
 def listarRecomendados(request):
+
     if request.user.is_authenticated:
-        if request.is_ajax():
-            jugador = Jugador.objects.get(usuario_id=request.user.pk)
-            recomendados= list(jugador.tiposRecomendados.all().values())
-            score = []
 
-            juegos = list(Juego.objects.all().values())
+        jugador = Jugador.objects.get(usuario_id=request.user.pk)
+        recomendados = list(jugador.tiposRecomendados.all().values())
+        score = []
 
-            if(len(recomendados)==0):
-                return JsonResponse({'recomendados':[],'estado':0})
-            elif (len(recomendados)==1):
-                juegosRecomendados = juegosListaRecomendados(juegos, [], recomendados[0]['tipo_id'])
+        juegos = list(Juego.objects.all().values())
 
-                return JsonResponse({'recomendados':[juegosRecomendados],'estado':0})
-
-            recomendado = tipoRecomendado(recomendados,recomendados[0])
-
-            juegosRecomendados = juegosListaRecomendados(juegos,[],recomendado['tipo_id'])
-            random.shuffle(juegosRecomendados)
-            juegosRecomendados = juegosRecomendados[:10]
-
-
-
+        if (len(recomendados) == 0):
+            return JsonResponse({'recomendados': [], 'estado': 0})
+        elif (len(recomendados) == 1):
+            juegosRecomendados = juegosListaRecomendados(juegos, [], recomendados[0]['tipo_id'])
             puntajes = Puntaje.objects.filter(jugador_id=jugador.pk)
-
             for x in juegosRecomendados:
                 estado = False
                 for y in puntajes:
                     if x['id'] == y.juego.pk:
-
                         score.append(y.valor)
                         estado = True
                         break
                 if not estado:
                     score.append(0)
-            print(score)
-            return JsonResponse({'recomendados':juegosRecomendados,'puntaje':score,'estado':1},content_type='application/json',safe=False)
+
+            return JsonResponse({'recomendados': [juegosRecomendados], 'estado': 0, 'puntaje':score})
+
+        recomendado = tipoRecomendado(recomendados, recomendados[0])
+
+        juegosRecomendados = juegosListaRecomendados(juegos, [], recomendado['tipo_id'])
+        random.shuffle(juegosRecomendados)
+        juegosRecomendados = juegosRecomendados[:10]
+
+        puntajes = Puntaje.objects.filter(jugador_id=jugador.pk)
+
+        for x in juegosRecomendados:
+            estado = False
+            for y in puntajes:
+                if x['id'] == y.juego.pk:
+                    score.append(y.valor)
+                    estado = True
+                    break
+            if not estado:
+                score.append(0)
+        print(score)
+    return JsonResponse({'recomendados': juegosRecomendados, 'puntaje': score, 'estado': 1},
+                            content_type='application/json', safe=False)
+
 
 
 
